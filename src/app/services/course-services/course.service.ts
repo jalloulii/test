@@ -6,7 +6,7 @@ import { Course } from 'src/app/user/user.module';
   providedIn: 'root'
 })
 export class CourseService {
-  private _herokuURL = "https://success-tn.herokuapp.com/"
+  private _herokuURL = "https://success-tn.herokuapp.com"
   private _baseLocalUrl = "http://localhost:3000";
 
   private _allCourses = this._herokuURL + "/ecourse/all";
