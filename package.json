@@ -48,9 +48,7 @@
     "jsonwebtoken": "^8.5.1",
     "mathjs": "^7.1.0",
     "mongoose": "^5.9.25",
-    "nodemon": "^2.0.4"
-  },
-  "devDependencies": {
+    "nodemon": "^2.0.4",
     "@angular-devkit/build-angular": "~0.901.8",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
