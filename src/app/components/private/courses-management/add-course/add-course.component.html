@@ -1,0 +1,290 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+            <app-navbar></app-navbar>
+
+
+            <div class="pageContenu">
+                <div class="user-management">
+                    <span class="khat">
+                        <em></em>
+                    </span>
+
+
+                    <h5
+                        style="letter-spacing: 5px;
+                font-size: 40px;
+                color: #F79F17;
+                margin: 20px 0 45px 0;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                        Profile Management</h5>
+
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+
+
+                <div class="table_users col-xl-12 col-lg-12">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 style="color:#C19A3A" class="m-0 font-weight-bold">add course
+                            </h6>
+
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <div class="table_users col-xl-12 col-lg-12">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div
+                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 style="color:#C19A3A" class="m-0 font-weight-bold">COURSE INFORMATION
+                                                PART
+                                            </h6>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <form [formGroup]="addUeser" (ngSubmit)="addCourse()" class="mx-3">
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input formControlName="profId" type="text" id="orangeForm-name"
+                                            class="form-control">
+
+
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input formControlName="title" type="text" id="orangeForm-name"
+                                            class="form-control">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name">Course
+                                            Title</label>
+                                        <div class="text-danger" *ngIf="mytitle.touched && mytitle.invalid">
+                                            <div *ngIf="mytitle.errors.required">Course Title is required</div>
+                                            <div *ngIf="mytitle.errors.pattern">Course Title in invalid</div>
+                                            <div *ngIf="mytitle.errors.minlength">Course Title must contains 2
+                                                characteres at least</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input formControlName="price" type="text" id="orangeForm-name"
+                                            class="form-control">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name">Course
+                                            Price</label>
+                                        <div class="text-danger" *ngIf="myprice.touched && myprice.invalid">
+                                            <div *ngIf="myprice.errors.required">Course price is required</div>
+                                            <div *ngIf="myprice.errors.pattern">Course price in invalid</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <!--Material textarea-->
+
+                                        <textarea formControlName="description" id="form7"
+                                            class="md-textarea form-control" rows="3"></textarea>
+                                        <label for="form7">Course Description</label>
+
+
+                                        <div class="text-danger" *ngIf="mydescription.touched && mydescription.invalid">
+                                            <div *ngIf="mydescription.errors.required">Course Description is required
+                                            </div>
+                                            <div *ngIf="mydescription.errors.pattern">Course Description is invalid
+                                            </div>
+                                            <div *ngIf="mydescription.errors.minlength">Course Description must contains
+                                                at
+                                                least 2
+                                                characteres</div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <!--Material textarea-->
+                                        <textarea formControlName="lesson_body" id="form7"
+                                            class="md-textarea form-control" rows="3"></textarea>
+                                        <label for="form7">Course Body</label>
+                                        <div class="text-danger" *ngIf="mylesson_body.touched && mylesson_body.invalid">
+                                            <div *ngIf="mylesson_body.errors.required">Course Body is required
+                                            </div>
+                                            <div *ngIf="mylesson_body.errors.minlength">Course Body must contains
+                                                at
+                                                least 2
+                                                characteres</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5 col-3 ">
+
+                                        <!--Material textarea-->
+                                        <select formControlName="categorie"
+                                            class="mdb-select md-form browser-default custom-select">
+                                            <option value="" disabled selected>Choose Course Categorie</option>
+                                            <option>DEVELOPMENT</option>
+                                            <option>DESIGN</option>
+                                            <option>PHOTOGRAPHY</option>
+                                            <option>TEACHING</option>
+                                            <option>GAMING</option>
+
+                                        </select>
+
+                                        <div class="text-danger" *ngIf="mycategorie.touched && mycategorie.invalid">
+                                            <div *ngIf="mycategorie.errors.required">Course Categorie is required
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="table_users col-xl-12 col-lg-12">
+                                        <div class="card shadow mb-4">
+                                            <!-- Card Header - Dropdown -->
+                                            <div
+                                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                <h6 style="color:#C19A3A" class="m-0 font-weight-bold">QUIZ INFORMATION PART
+                                                </h6>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <!-- QUIZ INPUTS -->
+
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <!--Material textarea-->
+                                        <textarea formControlName="quiz_question" id="form7"
+                                            class="md-textarea form-control" rows="3"></textarea>
+                                        <label for="form7">Quiz Question</label>
+                                        <div class="text-danger"
+                                            *ngIf="myquiz_question.touched && myquiz_question.invalid">
+                                            <div *ngIf="myquiz_question.errors.required">Quiz question is required
+                                            </div>
+                                            <div *ngIf="myquiz_question.errors.minlength">Quiz question must contains
+                                                at
+                                                least 2
+                                                characteres</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <!--Material textarea-->
+                                        <textarea formControlName="quiz_choix_1" id="form7"
+                                            class="md-textarea form-control" rows="3"></textarea>
+                                        <label for="form7">quiz choix : a</label>
+                                        <div class="text-danger"
+                                            *ngIf="myquiz_choix_1.touched && myquiz_choix_1.invalid">
+                                            <div *ngIf="myquiz_choix_1.errors.required">quiz choix a is required
+                                            </div>
+                                            <div *ngIf="myquiz_choix_1.errors.minlength">quiz choix a must contains
+                                                at
+                                                least 2
+                                                characteres</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <!--Material textarea-->
+                                        <textarea formControlName="quiz_choix_2" id="form7"
+                                            class="md-textarea form-control" rows="3"></textarea>
+                                        <label for="form7">Quiz Choix : b</label>
+                                        <div class="text-danger"
+                                            *ngIf="myquiz_choix_2.touched && myquiz_choix_2.invalid">
+                                            <div *ngIf="myquiz_choix_2.errors.required">Quiz choix b is required
+                                            </div>
+                                            <div *ngIf="myquiz_choix_2.errors.minlength">Quiz choix b must contains
+                                                at
+                                                least 2
+                                                characteres</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <!--Material textarea-->
+                                        <textarea formControlName="quiz_choix_3" id="form7"
+                                            class="md-textarea form-control" rows="3"></textarea>
+                                        <label for="form7">Quiz Choix : c</label>
+                                        <div class="text-danger"
+                                            *ngIf="myquiz_choix_3.touched && myquiz_choix_3.invalid">
+                                            <div *ngIf="myquiz_choix_3.errors.required">Quiz Choix c is required
+                                            </div>
+                                            <div *ngIf="myquiz_choix_3.errors.minlength">Quiz Choix c must contains
+                                                at
+                                                least 2
+                                                characteres</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="md-form mb-5 col-3 ">
+
+                                        <!--Material textarea-->
+                                        <select formControlName="quiz_real_reply"
+                                            class="mdb-select md-form browser-default custom-select">
+                                            <option value="" disabled selected>Choose Quiz True Answer</option>
+                                            <option>a</option>
+                                            <option>b</option>
+                                            <option>c</option>
+                                        </select>
+
+                                        <div class="text-danger"
+                                            *ngIf="myquiz_real_reply.touched && myquiz_real_reply.invalid">
+                                            <div *ngIf="myquiz_real_reply.errors.required">Quiz Real Reply is required
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <div>
+                                            <input type="submit" value="add course" [disabled]="addUeser.invalid"
+                                                class="btn btn-warning mr-2 mb-2">
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--end modal-->
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!--BEGIN FOOTER-->
+        <app-footer></app-footer>
+        <!--END FOOTER-->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
